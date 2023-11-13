@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-12 col-sm-12 text-center">
+      <img class="img-fluid mx-auto" src="assets\img\LOGO.svg" alt="Logo">
+    </div>
+  </div>
+
+  <div id="info" class="row">
+    <div class="col-12 col-md-12 col-sm-12 text-justify">
+      <h5>Sobre nosotras</h5><br>mersivos, interesantes e intuitivos en la web. 
+        Para ello, apostamos por convertir a los us
+      <p>
+        Studio <span>VILA</span>, donde los <span>v</span>ideojuegos se convierten en
+        <span>i</span>ngenio, <span>l</span>ogros y <span>a</span>venturas.
+      </p>
+      <p>
+        Buscamos crear juegos de rol divertidos, inuarios en el protagonista principal de cada juego. 
+        Hacerles vivir el juego y olvidarse de su realidad.
+      </p><br><br>
+    </div>
+
+    <div class="col-12 col-md-12 col-sm-12">
+      <h5>Contáctanos</h5><br>
+      <div class="row" id="ceos" *ngIf="ceos && ceos.length > 0">
+        <div class="card mb-3 col-6" id="ceos" *ngFor="let ceo of ceos">
+          <div class="row g-0">
+            <div class="col-4"><img class="img-fluid rounded-start" [src]="ceo.imagen" alt="perfil"></div>
+            <div class="col-8">
+            <div class="card-body ">
+              <p class="text"><span><u>{{ceo.nombre_completo}}</u></span></p> 
+              <p class="text">{{ceo.cargo}}</p>
+              <p class="text">{{ceo.especialidad}}</p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div><br>
+
+      <div *ngIf="ceos && ceos.length === 0">
+        <p>Todavía no hay ceos insertados.</p>
+      </div><br>
+
+      <div class="row" id="socialmedia">
+        <p><u>{{ sm }}</u></p>
+        <div class="col" *ngFor="let socialMedia of socialMedias;index as i">
+          <div class="card-body">
+            <a *ngFor="let link of socialMedia['link']" href="{{link['url']}}" class="card-link">{{link['text']}}</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="col-12 text-center">
+    <br><br><p>{{ copyright }}</p>
+  </div> 
+
+</div>
